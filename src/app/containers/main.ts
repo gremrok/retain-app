@@ -4,7 +4,12 @@ import { Component, OnInit } from '@angular/core';
     moduleId: 'Main',
     selector: 'main-container',
     template: `
-    <div><main class="main">Content here</main></div>
+    <div class="main-container">
+        <app-bar></app-bar>
+        <main class="main">
+        Content here
+        </main>
+    </div>
     `
 })
 export class Main implements OnInit {

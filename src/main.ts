@@ -3,13 +3,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { App } from './app';
 import { Main } from './app/containers';
+import { AppBar } from './app/ui';
 @NgModule({
     imports: [BrowserModule],
     bootstrap: [App],
     exports: [],
     declarations: [
         App,
-        Main
+        Main,
+        AppBar
     ],
     providers: [],
 })
