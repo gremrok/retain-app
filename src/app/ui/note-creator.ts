@@ -36,12 +36,18 @@ import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 	          class="col-xs-10"
 	        >
 	        <div class="actions col-xs-12 row between-xs" *ngIf="fullForm">
-	          <button
-	            type="submit"
-	            class="btn-light"
-	           >
-	            Done
-	          </button>
+                <div class="col-xs-3">
+                    <color-picker
+                        [colors]="colors"
+                        (selected)="onColorSelect($event)"
+                    ></color-picker>
+	            </div>
+                <button
+                    type="submit"
+                    class="btn-light"
+                >
+                    Done
+                </button>
 	        </div>
 	      </form>
           <pre>{{ newNote | json }}</pre>
@@ -52,7 +58,8 @@ export class NoteCreator implements OnInit {
     constructor() { }
     
     @Output() createNote = new EventEmitter();
-    
+    colors: string[] = ['#B19CD9','#FF6961','#77DD77','#AEC6CF','#F49AC2','white'];
+
     ngOnInit() { }
     
     newNote = {
@@ -68,6 +75,8 @@ export class NoteCreator implements OnInit {
         if (title && value){
             this.createNote.next({title, value, color});
         }
+        this.reset();
+		this.toggle(false);
     }
     
     toggle(value: boolean){
@@ -80,5 +89,9 @@ export class NoteCreator implements OnInit {
             value: '',
             color: 'white'
         }
+    }
+
+    onColorSelect(color: string){
+        this.newNote.color = color;
     }
 }
