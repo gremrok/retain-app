@@ -5,9 +5,7 @@ import { Component, OnInit } from '@angular/core';
     selector: 'app',
     template: `
     <div>
-        <h3>
-            yo, world!
-        </h3>
+        <main-container></main-container>
     </div>
     `
 })
