@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { App } from './app';
-import { Main } from './app/containers';
-import { AppBar } from './app/ui';
+import { Main, Notes } from './app/containers';
+import { AppBar, NoteCard } from './app/ui';
 @NgModule({
     imports: [BrowserModule],
     bootstrap: [App],
@@ -11,7 +11,9 @@ import { AppBar } from './app/ui';
     declarations: [
         App,
         Main,
-        AppBar
+        AppBar,
+        NoteCard,
+        Notes
     ],
     providers: [],
 })
