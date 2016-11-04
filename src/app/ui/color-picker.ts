@@ -39,6 +39,8 @@ import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 		    <div class="color"
 		    *ngFor="let color of colors"
 		    (click)="selectColor(color)"
+            (mouseleave)="applyColor(color)"
+            (mouseenter)="applyColor(color)"
 		    [ngStyle]="{'background-color': color}"
 		    >
 		    </div>
@@ -60,6 +62,10 @@ export class ColorPicker implements OnInit {
     
     selectColor(color: string){
         this.isSelectorVisible = false;
+        this.selected.next(color);
+    }
+
+    applyColor(color: string){
         this.selected.next(color);
     }
     ngOnInit() { }
