@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-    moduleId: 'App',
     selector: 'app',
     template: `
     <div>
-        <main-container></main-container>
+        <router-outlet></router-outlet>
     </div>
     `
 })

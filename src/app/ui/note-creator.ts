@@ -74,9 +74,9 @@ export class NoteCreator implements OnInit {
         const {title, value, color} = this.newNote;
         if (title && value){
             this.createNote.next({title, value, color});
+            this.reset();
+		    this.toggle(false);
         }
-        this.reset();
-		this.toggle(false);
     }
     
     toggle(value: boolean){
